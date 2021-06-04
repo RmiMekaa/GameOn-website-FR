@@ -31,156 +31,9 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
-//----------------------------------------------------------------------------------------------------------
+//-------------------V1---------------------------------------------------------------------------
 
-/*
-// Vérifie si la saisie comporte au moins 2 caractères et affiche un message si non
-function validLength(input) {
-  return input.length >= 2 ? "" : "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
-}
-
-// Vérifie que la saisie ne comporte que des lettres, tiret ou apostrophe et affiche un message si non
-function validText(input) {
-  const nameReg = /^[a-z-']+$/i;
-  return nameReg.test(input) ? "" : "La saisie n'est pas correcte.";
-}
-
-// Vérifie la saisie du prénom
-let firstNameIsValid;
-form.firstName.addEventListener("change", function() {
-  let msg ="";
-  msg += validLength(this.value);
-  msg += validText(this.value);
-  if (msg === "") {
-    this.closest(".formData").removeAttribute("data-error");
-    this.closest(".formData").removeAttribute("data-error-visible");
-    firstNameIsValid = true;
-  } else {
-    this.closest(".formData").setAttribute("data-error", msg);
-    this.closest(".formData").setAttribute("data-error-visible", "true");
-    firstNameIsValid = false;
-  }
-});
-
-// Vérifie la saisie du nom
-let lastNameIsValid;
-form.lastName.addEventListener("change", function() {
-  let msg ="";
-  msg += validLength(this.value);
-  msg += validText(this.value);
-  if (msg === "") {
-    this.closest(".formData").removeAttribute("data-error");
-    this.closest(".formData").removeAttribute("data-error-visible");
-    lastNameIsValid = true;
-  } else {
-    this.closest(".formData").setAttribute("data-error", msg);
-    this.closest(".formData").setAttribute("data-error-visible", "true");
-    lastNameIsValid = false;
-  }
-});
-
-// Vérifie la saisie de l'email
-let mailIsValid;
-form.email.addEventListener("change", function() {
-    const mailReg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (mailReg.test(this.value)) {
-      this.closest(".formData").removeAttribute("data-error");
-      this.closest(".formData").removeAttribute("data-error-visible");
-      mailIsValid = true;
-    } else {
-      this.closest(".formData").setAttribute("data-error", "Ce n'est pas une adresse email valide");
-      this.closest(".formData").setAttribute("data-error-visible", "true");
-      mailIsValid = false;
-    }
-});
-
-// Vérifie la date de naissance
-let birthdateIsValid;
-form.birthdate.addEventListener("change", function() {
-    const dateReg = /^[0-9]{2}[0-9]{2}[0-9]{4}$/;
-    if (dateReg.test(this.value)) {
-      this.closest(".formData").removeAttribute("data-error");
-      this.closest(".formData").removeAttribute("data-error-visible");
-      birthdateIsValid = true;
-      } else {
-      this.closest(".formData").setAttribute("data-error", "Vous devez entrer votre date de naissance.");
-      this.closest(".formData").setAttribute("data-error-visible", "true");
-      birthdateIsValid = false;
-    }
-});
-
-// Vérifie la saisie du nombre de tournoi
-let quantityIsValid;
-form.quantity.addEventListener("change", function() {
-  const quantityReg = /^[0-9]+$/;
-  if (quantityReg.test(this.value) && this.value > 0) {
-    this.closest(".formData").removeAttribute("data-error");
-    this.closest(".formData").removeAttribute("data-error-visible");
-    quantityIsValid = true;
-  } else {
-    this.closest(".formData").setAttribute("data-error", "Veuillez entrer un nombre");
-    this.closest(".formData").setAttribute("data-error-visible", "true");
-    quantityIsValid = false;
-  }
-});
-
-// Vérifie que les conditions d'utilisations ont été acceptées
-let touIsValid = true;
-form.tou.addEventListener("change", function() {
-  if (this.checked == true) {
-    this.closest(".formData").removeAttribute("data-error");
-    this.closest(".formData").removeAttribute("data-error-visible");
-    touIsValid = true;
-  } else {
-    this.closest(".formData").setAttribute("data-error", "Vous devez vérifier que vous acceptez les termes et conditions.");
-    this.closest(".formData").setAttribute("data-error-visible", "true");
-    touIsValid = false;
-  }
-});
-
-// Vérifie qu'une option est cochée lors de l'envoi du formulaire
-let locationIsValid;
-document.querySelector("#submit-btn").addEventListener("click",function(e) {
-    if (countChecked() == 0) {
-      e.preventDefault();
-      document.getElementById("locations").setAttribute("data-error", "Veuillez choisir une option.");
-      document.getElementById("locations").setAttribute("data-error-visible", "true");
-      locationIsValid = false;
-    } else {
-      document.getElementById("locations").removeAttribute("data-error");
-      document.getElementById("locations").removeAttribute("data-error-visible");  
-      locationIsValid = true;
-    }
-});
-
- // renvoie 0 si aucune option n'a été cochée
-function countChecked() {
-    let locations = form.elements["location"];
-    let count = 0;
-    for (let i = 0; i < locations.length; i++) {
-      if (locations[i].checked) {
-        count++;
-      }
-    }
-    return count;
-}
-
-
-// Empêche l'envoi d'un formulaire si un champ n'est pas conforme
-function validation() {
-  if (firstNameIsValid && lastNameIsValid && mailIsValid && quantityIsValid && touIsValid && locationIsValid) {
-    console.log("success");
-    return true;
-  } else {
-    e.preventDefault();
-    console.log("erreur");
-    return false;
-  }
-};
-*/
-
-// DOM ELEMENTS
-const modalBody = document.getElementsByClassName('modal-body');
+// Inputs
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const email = document.getElementById('email');
@@ -190,120 +43,156 @@ const locations = document.getElementsByName('location');
 const termsOfUse = document.getElementById('checkbox1');
 const newsletter = document.getElementById('checkbox2');
 
-// REGEX
-const nameReg = /^[a-z-']+$/i;
-const mailReg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-const birthdateReg = /^[0-9]{4}[-][0-9]{2}[-][0-9]{2}$/;
-const quantityReg = /^[0-9]+$/;
+// Booléen qui renverra false si une erreur est rencontrée
+let formIsValid = true;
 
-// SUBMIT EVENT
+// Affiche un message d'erreur et passe formIsValid sur false
+function setError(target, msg) {
+  target.parentNode.setAttribute("data-error", msg);
+  target.parentNode.setAttribute("data-error-visible", "true");
+  formIsValid = false;
+}
+// Supprime le message d'erreur
+function removeErrorMsg(target) {
+  target.parentNode.removeAttribute("data-error");
+  target.parentNode.removeAttribute("data-error-visible");
+}
+
+// Fonctions de validation des champs
+function checkName(target) {
+  const nameReg = /^[a-z-']+$/i;
+  if (target.value.length < 2) return setError(target, "Le champ doit contenir au moins 2 caractères.");
+  if (nameReg.test(target.value) == false) return setError(target, "Format incorrect.");
+  else return removeErrorMsg(target);  
+}
+function checkBirthdate() {
+  const birthdateReg = /^[0-9]{4}[-][0-9]{2}[-][0-9]{2}$/;
+  if (birthdate.value.length === 0) return setError(birthdate, "Veuillez renseigner votre date de naissance.");
+  if (!birthdateReg.test(birthdate.value)) return setError(birthdate, "La date de naissance n'est pas au bon format.");
+  else return removeErrorMsg(birthdate);
+}
+function checkMail() {
+  const mailReg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (email.value.length === 0) return setError(email, "Veuillez renseigner votre adresse email.");
+  if (!email.checkValidity()) return setError(email, "Ce n'est pas une adresse email valide.");
+  return removeErrorMsg(email);
+}
+function checkTournaments() {
+  const quantityReg = /^[0-9]+$/;
+  if (!quantityReg.test(quantity.value)) return setError(quantity, "Veuillez entrer un nombre entre 0 et 99.");
+  else return removeErrorMsg(quantity);
+}
+function checkTermsOfUse() {
+  if (!termsOfUse.checked) return setError(termsOfUse, "Vous devez accepter les conditions générales d'utilisation.");
+  else return removeErrorMsg(termsOfUse);
+}
+function checkLocation() {
+  function countChecked() {
+    let count = 0;
+    for (let i = 0; i < locations.length; i++) {
+      if (locations[i].checked) {
+        count++;
+      }
+    }
+    return count;
+}
+  if (!countChecked() == 1) return setError(locations[0], "Veuillez choisir une option.");
+  else return removeErrorMsg(locations[0]);
+}
+function checkNewsletter() {
+  if (newsletter.checked == true) /*inscrit l'utilisateur à la newsletter*/;
+} 
+
+// Vérifie tous les inputs
+function checkAllInputs() {
+  checkName(firstName);
+  checkName(lastName);
+  checkMail();
+  checkBirthdate();
+  checkTournaments();
+  checkTermsOfUse();
+  checkNewsletter();
+  checkLocation();
+}
+
+//SUBMIT EVENT
 form.addEventListener('submit', function(e) {
   formIsValid = true;
-  checkInputs();
+  checkAllInputs();
   if (formIsValid === true) {
     e.preventDefault();
-    console.log("success");
-    // AFFICHER MESSAGE DE VALIDATION
-    //let success = document.createElement("p");
-    //document.modalBody.appendChild(success);
-    //success.className = "success";
-    //success.innerText = "Merci, le formulaire a bien été soumis";
+    displaySuccessMsg()
   } else {
     e.preventDefault();
     console.log("error");
   }
 });
 
-// BOOLEEN QUI RENVOIE FALSE SI UNE ERREUR EST TROUVÉE DANS UN DES INPUTS
-let formIsValid = true;
-
-// FONCTION QUI AFFICHE MESSAGE D'ERREUR ET PASSE formIsValid SUR FALSE
-function setError(input, msg) {
-  input.closest(".formData").setAttribute("data-error", msg);
-  input.closest(".formData").setAttribute("data-error-visible", "true");
-  formIsValid = false;
+function displaySuccessMsg() {
+    let success = document.createElement("p");
+    document.querySelector(".content").appendChild(success);
+    success.className = "success";
+    success.innerHTML = "Merci ! <br> Votre réservation a été reçue.";
 }
 
-// FONCTION QUI SUPPRIME MESSAGE D'ERREUR
-function removeErrorMsg(input) {
-  input.closest(".formData").removeAttribute("data-error");
-  input.closest(".formData").removeAttribute("data-error-visible");
+/*---------------V2---------------------------------------------------------------------------------
+
+// Vérifie tous les inputs de type saisie
+document.querySelectorAll("input").forEach((input) => input.onblur = checkInputFields);
+function checkInputFields() {
+  if (this.value.length === 0) {
+    return inputValidation(this.parentNode, "Veuillez renseigner ce champ.");
+  }
+  switch(this.type){
+    case "text": 
+      const nameReg = /^[a-z-']+$/i;
+      if (this.value.length < 2) return inputValidation(this.parentNode, "Le champ doit contenir au moins 2 caractères.");
+      if (!nameReg.test(this.value)) return inputValidation(this.parentNode, "Format incorrect.");
+      return inputValidation(this.parentNode);
+    case "email":
+      if (!this.checkValidity()) return inputValidation(this.parentNode, "Ce n'est pas une adresse email valide.");
+      return inputValidation(this.parentNode);
+    case "date": 
+      const birthdateReg = /^[0-9]{4}[-][0-9]{2}[-][0-9]{2}$/;
+      if (!birthdateReg.test(this.value)) return inputValidation(this.parentNode, "Votre année de naissance ne peut contenir que 4 chiffres.");
+      return inputValidation(this.parentNode);
+    case "number":
+      if (!this.checkValidity()) return inputError(this.parentNode, "Veuillez entrer un nombre entre 0 et 99.");
+      return inputValidation(this.parentNode);
+    default: 
+      // Si le type d'input n'est pas un de ceux listé ci-dessus on stoppe la fonction
+      break;
+  }
 }
 
-// FONCTION QUI VÉRIFIE SI TOUS LES INPUTS SONT VALIDES
-function checkInputs() {
-    // Vérifie la saisie du prénom
-    if (nameReg.test(firstName.value) == true && firstName.value.length >= 2) {
-      removeErrorMsg(firstName);
-    } else if (firstName.value.length < 2) {
-      setError(firstName, "Veuillez entrer 2 caractères ou plus pour le champ du nom.");
-    } else if (nameReg.test(firstName.value) == false) {
-      setError(firstName, "Format incorrect.");
-    } 
+// Fonction qui vérifie si un champ est valide et affiche un message si ce n'est pas le cas
+function inputValidation(target, msg=""){
+  const succeed = msg === "" ? true : false;
+  target.setAttribute("data-error", msg);
+  target.setAttribute("data-error-visible", !succeed);
+  return succeed;
+}
 
-    // Vérifie la saisie du nom
-    if (nameReg.test(lastName.value) == true && lastName.value.length >= 2) {
-      removeErrorMsg(lastName);
-    } else if (lastName.value.length < 2) {
-      setError(lastName, "Veuillez entrer 2 caractères ou plus pour le champ du nom.");
-    } else if (nameReg.test(lastName.value) == false) {
-      setError(lastName, "Format incorrect.");
-    } 
-
-    // Vérifie la saisie de l'email
-    if (mailReg.test(email.value)) {
-      removeErrorMsg(email);
-    } else if (email.value === "") {
-      setError(email, "Veuillez entrer une adresse email.");
-    } else {
-      setError(email, "Ce n'est pas une adresse email valide.");
-    }
-
-    // Vérifie la date de naissance
-    if (birthdateReg.test(birthdate.value)) {
-      removeErrorMsg(birthdate);
-      } else {
-      setError(birthdate, "Vous devez entrer votre date de naissance.");
-    }
-
-    // Vérifie le nombre de tournois
-    if (quantityReg.test(quantity.value) && quantity.value != "") {
-      removeErrorMsg(quantity);
-    } else {
-      setError(quantity, "Veuillez entrer un nombre.");
-    }
+// Submit event
+form.addEventListener('submit', function(e) {
   
-    // Vérifie qu'une option est cochée lors de l'envoi du formulaire
-    if (countChecked() == 1) {
-      removeErrorMsg(document.getElementById("locations"));
-    } else {
-      setError(document.getElementById("locations"), "Veuillez choisir une option.");
-    }
-    function countChecked() {
-        let locations = form.elements["location"];
-        let count = 0;
-        for (let i = 0; i < locations.length; i++) {
-          if (locations[i].checked) {
-            count++;
-          }
-        }
-        return count;
-    }
+  e.preventDefault();
+  let errors = 0;
+  document.querySelectorAll("input").forEach((input) => {
+    if (input.type === "radio " || input.type === "submit" || input.type === "checkbox") return;
+    if (!checkInputFields()) errors++;
+    console.log(errors);
+  });
 
-    // Vérifie que les conditions générales ont été acceptées
-    if (termsOfUse.checked == true) {
-      removeErrorMsg(termsOfUse);
-    } else {
-      setError(termsOfUse, "Vous devez accepter les conditions générales d'utilisation.");
-    }
-  
-    // Regarde si l'utilisateur souhaite s'inscrire à la newsletter
-    if (newsletter.checked == true) {
-      // fonction qui inscrit l'utilisateur à la newsletter
-    } 
-  };
-  
+  const checkbox = document.getElementById("checkbox1");
+  if (!checkbox.checked){
+    errors++;
+    inputValidation(checkbox.parentNode, "vous devez accepter les conditions d'utilisation")
+  }
+  else inputValidation(checkbox.parentNode);
 
-
-
-
+  if (errors > 0) {
+    console.log("error");
+  }
+});
+*/
