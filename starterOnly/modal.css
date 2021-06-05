@@ -14,7 +14,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("starterOnly/bg_img.jpg");
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -118,12 +117,6 @@ main {
   background: #3876ac;
 }
 
-@media screen and (max-width: 900px) {
-  .hero-content .modal-btn {
-    width: 140%;
-  }
-}
-
 .footer {
   margin: 20px;
   padding: 10px;
@@ -174,13 +167,13 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+  text-align: left;
 }
 
 @media screen and (max-width: 425px) {
   .content {
     margin-top: 82px;
   }
-
   .bground {
     background-color: transparent;
   }
@@ -217,13 +210,13 @@ input {
 }
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #e54858;
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
   text-align: left;
-  line-height: 1rem;
+  line-height: 0.8rem;
   opacity: 0;
   transition: 0.3s;
 }
@@ -243,6 +236,7 @@ input {
 .checkbox-label,
 .checkbox2-label {
   position: relative;
+  margin-top: 10px;
   margin-left: 36px;
   font-size: 12px;
   font-weight: normal;
@@ -331,7 +325,8 @@ input {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.btn-close {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -341,6 +336,18 @@ input {
   color: #fff;
   cursor: pointer;
   border: 0;
+  white-space: nowrap;
+}
+
+.btn-submit {
+  margin-top: 25px;
+}
+
+.btn-close {
+  position: relative;
+  margin: auto;
+  display: none;
+  z-index: 1000;
 }
 /* custom select styles */
 .custom-select {
@@ -423,13 +430,18 @@ input {
   max-width: 100%;
 }
 .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   padding: 51px 67px;
   grid-column: span 4;
   background: #232323;
   color: #fff;
   position: relative;
   text-align: left;
+  width: 100%;
 }
+
 .hero-content::after {
   content: "";
   width: 100%;
@@ -445,15 +457,26 @@ input {
 }
 .hero-headline {
   font-size: 6rem;
-  line-height: 6rem;
+  line-height: 7rem;
   font-weight: normal;
-  width: 400%;
+  white-space: nowrap;
 }
 .hero-text {
   width: 150%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
+}
+
+@media screen and (max-width: 950px) {
+  .hero-headline {
+    white-space: normal;
+    width: 400%;
+  }
+
+  .hero-text {
+    width: 180%;
+  }
 }
 .btn-signup {
   outline: none;
@@ -462,6 +485,7 @@ input {
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
+  width: 200px;
 }
 .hero-img {
   grid-column: span 8;
