@@ -1,8 +1,7 @@
 # OpenClassrooms - Project 4
 **Project Name : GameOn**  
-**Project Title : "Create a landing page with javascript"** 
-**Test it ! : [GameOn ](https://rmimekaa.github.io/RemiRoeland_4_26-05-2021/starterOnly/)**
-
+**Project Title : "Create a landing page with javascript"**  
+**Test it ! : [GameOn ](https://rmimekaa.github.io/RemiRoeland_4_26-05-2021/starterOnly/)**  
 
 ## Project objectives
  - Fix CSS issues
@@ -22,9 +21,10 @@ Then, the main objective was to complete the JS for the subscription form to mak
  - All input fields must be completed
  - First name and last names should not contains something else than letters
  - Email should be in the right format
- - Birthdate: user must be at least 18 to subscribe.
+ - Birthdate: user must be at least 18 to subscribe
+ - Birthdate: max age set to 100 years old
  - User must accept terms and conditions to subscribe
- - Error messages are displayed to inform the user what is the issue
+ - Error messages are displayed to inform the user of the
  - If the form is valid, display a success message on submit
 
 <br/><br/>
