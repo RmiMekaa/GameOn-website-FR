@@ -188,13 +188,13 @@ eventListenerForLocations(locations);
 /**
  * Événement à la perte du focus pour les boutons radios
  *
- * @param   {NodeList}  locations  Les boutons radios des villes
+ * @param   {NodeList}  locationsInputs  Les boutons radios des villes
  *
  * @return  {void}  Écoute chaque bouton radio et appelle la fonction checkLocation pour chacun d'entre eux
  */
-function eventListenerForLocations(locations) {
-    for (let locationOption of locations) {
-        locationOption.addEventListener("change", checkLocation);
+function eventListenerForLocations(locationsInputs) {
+    for (let locationInput of locationsInputs) {
+        locationInput.addEventListener("change", checkLocation);
     }
 }
 
