@@ -115,7 +115,7 @@ function checkIfEmpty() {
 function checkName(target) {
     const nameReg = /^[a-z ,.'-]+$/i;
     if (target.value.length < 2) return setError(target, "Le champ doit contenir au moins 2 caractères.");
-    if (nameReg.test(target.value) == false) return setError(target, "Format incorrect.");
+    if (!nameReg.test(target.value)) return setError(target, "Format incorrect.");
     return removeErrorMsg(target);
 }
 /** 
