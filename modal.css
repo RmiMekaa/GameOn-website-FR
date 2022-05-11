@@ -13,7 +13,6 @@
 /* Landing Page */
 
 body {
-  margin: 0;
   display: flex;
   flex-direction: column;
   font-family: var(--font-default);
@@ -122,7 +121,6 @@ main {
   background: #fe142f;
   display: flex;
   margin: auto;
-  padding: 2em;
   color: #fff;
   padding: 0.75rem 2.5rem;
   border-radius: 1rem;
@@ -390,7 +388,7 @@ input {
 /* custom select styles */
 .custom-select {
   position: relative;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-size: 1.1rem;
   font-weight: normal;
 }
