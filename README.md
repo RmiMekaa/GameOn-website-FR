@@ -35,7 +35,7 @@ Then, the main objective was to complete the JS for the subscription form to mak
  - Error messages are displayed to inform the user of the
  - If the form is valid, display a success message on submit
 
-<br/><br/>
+---
 
 <p float="left">
  <img alt="HTML5" title="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="32px"/>
