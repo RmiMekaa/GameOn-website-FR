@@ -41,8 +41,8 @@ const termsOfUse = document.getElementById("checkbox1");
  */
 let today = new Date();
 let year = today.getFullYear();
-let month = new Intl.DateTimeFormat("fr",{month:"2-digit"}).format(today);
-let day = new Intl.DateTimeFormat("fr",{day:"2-digit"}).format(today);
+let month = new Intl.DateTimeFormat("fr", { month: "2-digit" }).format(today);
+let day = new Intl.DateTimeFormat("fr", { day: "2-digit" }).format(today);
 today = year + "-" + month + "-" + day;
 /**
  * Date minimum
@@ -113,10 +113,10 @@ function checkIfEmpty() {
  * @return {void} Appelle la fonction setError ou removeErrorMsg en fonction du résultat
  */
 function checkName(target) {
-    const nameReg = /^[a-zçéèêëàâîïôùû]+[-]?[a-zçéèêëàâîïôùû]+?$/i;
+    const nameReg = /^[a-z ,.'-]+$/i;
     if (target.value.length < 2) return setError(target, "Le champ doit contenir au moins 2 caractères.");
     if (nameReg.test(target.value) == false) return setError(target, "Format incorrect.");
-    return removeErrorMsg(target);  
+    return removeErrorMsg(target);
 }
 /** 
  * Vérifie la date de naissance
@@ -177,8 +177,8 @@ function checkLocation() {
 }
 
 // Événements pour vérifier les champs dès la perte du focus
-firstName.addEventListener("change", function() {checkName(firstName);});
-lastName.addEventListener("change", function() {checkName(lastName);});
+firstName.addEventListener("change", function () { checkName(firstName); });
+lastName.addEventListener("change", function () { checkName(lastName); });
 email.addEventListener("change", checkMail);
 birthdate.addEventListener("blur", checkBirthdate);
 tournaments.addEventListener("change", checkTournaments);
@@ -192,18 +192,18 @@ eventListenerForLocations(locations);
  *
  * @return  {void}  Écoute chaque bouton radio et appelle la fonction checkLocation pour chacun d'entre eux
  */
-function eventListenerForLocations (locations) {
+function eventListenerForLocations(locations) {
     for (let i = 0; i < locations.length; i++) {
         locations[i].addEventListener("change", checkLocation);
     }
 }
 
 // Événement à la soumission du formulaire
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function (e) {
     formIsValid = true;
     checkAllInputs();
     if (!formIsValid) {
-        e.preventDefault(); 
+        e.preventDefault();
         console.error("Formulaire non valide");
     } else {
         e.preventDefault();
