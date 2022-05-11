@@ -167,8 +167,8 @@ function checkTermsOfUse() {
  */
 function checkLocation() {
     let count = 0;
-    for (let i = 0; i < locations.length; i++) {
-        if (locations[i].checked) {
+    for (let location of locations) {
+        if (location.checked) {
             count++;
         }
     }
@@ -193,8 +193,8 @@ eventListenerForLocations(locations);
  * @return  {void}  Écoute chaque bouton radio et appelle la fonction checkLocation pour chacun d'entre eux
  */
 function eventListenerForLocations(locations) {
-    for (let i = 0; i < locations.length; i++) {
-        locations[i].addEventListener("change", checkLocation);
+    for (let locationOption of locations) {
+        locationOption.addEventListener("change", checkLocation);
     }
 }
 
