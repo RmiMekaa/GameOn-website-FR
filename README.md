@@ -1,7 +1,7 @@
 # OpenClassrooms - Project 4
 **Project Name : GameOn**  
 **Project Title : "Create a landing page with javascript"**  
-**Test it ! : [GameOn ](https://rmimekaa.github.io/RemiRoeland_4_26-05-2021/starterOnly/)**  
+**Test it ! : [GameOn ](https://rmimekaa.github.io/RemiRoeland_4_26-05-2021/)**  
 
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=RmiMekaa_RemiRoeland_4_26-05-2021&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=RmiMekaa_RemiRoeland_4_26-05-2021)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=RmiMekaa_RemiRoeland_4_26-05-2021&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=RmiMekaa_RemiRoeland_4_26-05-2021)
