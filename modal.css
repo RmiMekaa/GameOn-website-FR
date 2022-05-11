@@ -24,6 +24,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .header-logo img {
+    user-select: none;
     width: 150px;
     margin-top: 0.5rem;
   }
@@ -39,6 +40,7 @@ body {
 }
 
 .topnav a {
+  user-select: none;
   float: left;
   display: block;
   color: #000000;
